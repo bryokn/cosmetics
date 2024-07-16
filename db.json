@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Hydrating Face Cream",
+      "price": 999,
+      "skinType": "dry",
+      "category": "moisturizer",
+      "brand": "NaturGlow",
+      "description": "A rich, nourishing face cream that deeply hydrates dry skin.",
+      "ingredients": "Water, Glycerin, Cetearyl Alcohol, Caprylic/Capric Triglyceride, Hyaluronic Acid, Aloe Vera Extract",
+      "usage": "Apply a small amount to clean face and neck, morning and night.",
+      "image": "images/hydrating-face-cream.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Oil-Free Moisturizer",
+      "price": 499,
+      "skinType": "oily",
+      "category": "moisturizer",
+      "brand": "ClearSkin",
+      "description": "A lightweight, oil-free moisturizer that hydrates without clogging pores.",
+      "ingredients": "Water, Dimethicone, Glycerin, Niacinamide, Salicylic Acid, Tea Tree Oil",
+      "usage": "Apply to clean face twice daily, avoiding the eye area.",
+      "image": "images/oil-free-moisturizer.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Gentle Cleansing Gel",
+      "price": 799,
+      "skinType": "all",
+      "category": "cleanser",
+      "brand": "PureClean",
+      "description": "A mild, soap-free cleansing gel suitable for all skin types.",
+      "ingredients": "Water, Cocamidopropyl Betaine, Glycerin, Panthenol, Chamomile Extract, Aloe Vera Juice",
+      "usage": "Massage onto damp face and neck, rinse thoroughly with lukewarm water.",
+      "image": "images/gentle-cleansing-gel.jpg"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "productId": 1,
+      "username": "Sarah89",
+      "rating": 5,
+      "comment": "This face cream is amazing! My dry skin feels so much better."
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "username": "Mike_T",
+      "rating": 4,
+      "comment": "Great moisturizer for my oily skin. Doesn't leave a greasy feeling."
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "5 Tips for Healthy Skin",
+      "author": "Dr. Emma Kibet",
+      "date": "2024-07-10",
+      "content": "Maintaining healthy skin is crucial for overall well-being. Here are 5 tips to keep your skin glowing: 1. Stay hydrated..."
+    },
+    {
+      "id": 2,
+      "title": "Understanding Your Skin Type",
+      "author": "Lisa Chep, Esthetician",
+      "date": "2024-07-12",
+      "content": "Knowing your skin type is the first step in creating an effective skincare routine. There are five main skin types..."
+    }
+  ]
+}

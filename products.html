@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Cosmetic Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cosmetic Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-product.html">Add Product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4" role="main">
+        <h1>Our Products</h1>
+
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <h3>Filters</h3>
+                <form id="filterForm">
+                    <div class="mb-3">
+                        <label for="skinType" class="form-label">Skin Type</label>
+                        <select id="skinType" class="form-select">
+                            <option value="">All</option>
+                            <option value="Dry">Dry</option>
+                            <option value="Oily">Oily</option>
+                            <option value="Combination">Combination</option>
+                            <option value="All Skin Types">All Skin Types</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select id="category" class="form-select">
+                            <option value="">All</option>
+                            <option value="Moisturizer">Moisturizer</option>
+                            <option value="Cleanser">Cleanser</option>
+                            <option value="Serum">Serum</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priceRange" class="form-label">Price Range</label>
+                        <input type="range" class="form-range" id="priceRange" min="0" max="10000" step="100" value="10000">
+                        <span id="priceRangeValue">Ksh. 10000</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                </form>
+            </div>
+            <div class="col-md-9">
+                <div id="productList" class="row">
+                    <!-- Products will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProductForm">
+                        <input type="hidden" id="editProductId">
+                        <div class="mb-3">
+                            <label for="editProductName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="editProductName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductPrice" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="editProductPrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductSkinType" class="form-label">Skin Type</label>
+                            <select class="form-select" id="editProductSkinType" required>
+                                <option value="Dry">Dry</option>
+                                <option value="Oily">Oily</option>
+                                <option value="Combination">Combination</option>
+                                <option value="All Skin Types">All Skin Types</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductCategory" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="editProductCategory" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="editProductBrand" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="editProductDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductIngredients" class="form-label">Ingredients</label>
+                            <textarea class="form-control" id="editProductIngredients" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductUsage" class="form-label">Usage Instructions</label>
+                            <textarea class="form-control" id="editProductUsage" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editProductImage" class="form-label">Image URL</label>
+                            <input type="url" class="form-control" id="editProductImage" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEditProduct">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

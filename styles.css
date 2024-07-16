@@ -1,0 +1,76 @@
+.product-card {
+    margin-bottom: 20px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#productDetail {
+    margin-bottom: 30px;
+}
+
+#productDetail h1 {
+    margin-bottom: 20px;
+}
+
+#productDetail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#productDetail p {
+    margin-bottom: 10px;
+}
+
+#reviewList {
+    margin-bottom: 30px;
+}
+
+#reviewList div {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+#reviewForm div {
+    margin-bottom: 15px;
+}
+
+#reviewForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#reviewForm button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#reviewForm button:hover {
+    background-color: #0056b3;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
