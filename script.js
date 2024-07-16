@@ -192,8 +192,6 @@ async function loadReviews(productId) {
 }
 
 
-
-
 function setupReviewForm() {
     const reviewForm = document.getElementById('reviewForm');
     reviewForm.addEventListener('submit', async (e) => {
@@ -215,6 +213,16 @@ function setupReviewForm() {
         loadReviews(productId);
         reviewForm.reset();
     });
+}
+
+function loadProductDetail() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    if (productId) {
+        loadProductDetails(productId);
+    } else {
+        console.error('Product ID not found in URL');
+    }
 }
 
 async function loadBlogPosts() {

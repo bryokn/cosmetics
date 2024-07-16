@@ -1,29 +1,93 @@
-.product-card {
-    margin-bottom: 20px;
+:root {
+    --primary-color: #FF69B4; /* Hot Pink */
+    --secondary-color: #00CED1; /* Dark Turquoise */
+    --accent-color: #FFD700; /* Gold */
+    --background-color: #FFF0F5; /* Lavender Blush */
+    --text-color: #333333;
 }
 
-.product-card img {
-    max-width: 100%;
-    height: auto;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+h1, h2, h3 {
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.product-card {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card .card-body {
+    background-color: white;
+}
+
 #productDetail {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 30px;
 }
 
 #productDetail h1 {
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 #productDetail img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 #productDetail p {
@@ -35,8 +99,11 @@
 }
 
 #reviewList div {
-    border-bottom: 1px solid #e0e0e0;
-    padding: 15px 0;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 #reviewForm div {
@@ -46,31 +113,63 @@
 #reviewForm label {
     display: block;
     margin-bottom: 5px;
+    color: var(--secondary-color);
 }
 
 #reviewForm input,
 #reviewForm select,
 #reviewForm textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#reviewForm input:focus,
+#reviewForm select:focus,
+#reviewForm textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
 }
 
 #reviewForm button {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #reviewForm button:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
 }
+
 .product-image {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Add some fun elements */
+.navbar-brand::after {
+    content: " 💄";
+}
+
+.card-title::after {
+    content: " ✨";
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.product-card {
+    animation: float 5s ease-in-out infinite;
 }
